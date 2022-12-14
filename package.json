@@ -1,0 +1,23 @@
+{
+  "name": "job_search_hub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Twhite2/Job_search_hub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Twhite2/Job_search_hub/issues"
+  },
+  "homepage": "https://github.com/Twhite2/Job_search_hub#readme",
+  "dependencies": {
+    "puppeteer": "^19.4.0"
+  }
+}
