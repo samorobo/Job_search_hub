@@ -5,12 +5,13 @@ const puppeteer = require('puppeteer');
 async function run() {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto('https://www.simplyhired.com/search?q=remote');
-
-    //await page.type('.TextInput-field', 'Remote');
-   // const navigationPromise = page.waitForNavigation({ waitUntil: ['load', 'networkidle2'] });
-    //await page.click('.simple-item');
-    
+    await page.goto('https://www.simplyhired.com/search?q=remote&sb=dd&job');
+   await page.click(".pagination .next-pagination a").href;
+//    let i = 0;
+//    while (i <= 20){
+//     await page.click(".pagination .next-pagination a").href;
+//    }
+  
 
 //page evealuation into JSON format
     const jobs = await page.evaluate(() =>
@@ -19,16 +20,15 @@ async function run() {
             //company: e.querySelector('.Jobposting-labelWithIcon .jobposting-company').innerText,
             Description: e.querySelector('p').innerText,
             url: e.querySelector('.jobposting-title a').href,
-          // location: e.querySelector('.JobPosting-labelWithIcon .jobposting-location').innerText,
         })));
     
-        await page.click(".pagination .next-pagination a");
-        console.log(jobs);
+
+        //console.log(jobs);
 // Save data to a JSON file
-// fs.writeFile('jobs.json', JSON.stringify(jobs), (err) => {
-//     if (err) throw err;
-//     console.log('File saved');
-// });
+fs.writeFile('jobs.json', JSON.stringify(jobs), (err) => {
+    if (err) throw err;
+    console.log('File saved');
+});
     
 
     await browser.close();
