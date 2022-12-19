@@ -8,7 +8,7 @@ async function run() {
     await page.goto('https://www.simplyhired.com/search?q=remote&sb=dd&job');
    await page.click(".pagination .next-pagination a").href;
 //    let i = 0;
-//    while (i <= 20){
+//    while (i <= 5){
 //     await page.click(".pagination .next-pagination a").href;
 //    }
   
@@ -17,13 +17,14 @@ async function run() {
     const jobs = await page.evaluate(() =>
         Array.from(document.querySelectorAll('#job-list .SerpJob-jobCard.card'), (e) => ({
             title: e.querySelector('h3').innerText,
-            //company: e.querySelector('.Jobposting-labelWithIcon .jobposting-company').innerText,
+          //  company: e.querySelector('.JobPosting-labelWithIcon .jobposting-company span').innerText,
+            location: e.querySelector('.jobposting-location span').innerText,
             Description: e.querySelector('p').innerText,
             url: e.querySelector('.jobposting-title a').href,
         })));
     
 
-        //console.log(jobs);
+       // console.log(jobs);
 // Save data to a JSON file
 fs.writeFile('jobs.json', JSON.stringify(jobs), (err) => {
     if (err) throw err;
