@@ -1,36 +1,34 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 
-//Async function for using pupeteer
 async function run() {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({headless:true});
     const page = await browser.newPage();
-    await page.goto('https://www.simplyhired.com/search?q=remote&sb=dd&job');
-   await page.click(".pagination .next-pagination a").href;
-//    let i = 0;
-//    while (i <= 5){
-//     await page.click(".pagination .next-pagination a").href;
-//    }
-  
 
-//page evealuation into JSON format
-    const jobs = await page.evaluate(() =>
-        Array.from(document.querySelectorAll('#job-list .SerpJob-jobCard.card'), (e) => ({
-            title: e.querySelector('h3').innerText,
-          //  company: e.querySelector('.JobPosting-labelWithIcon .jobposting-company span').innerText,
-            location: e.querySelector('.jobposting-location span').innerText,
-            Description: e.querySelector('p').innerText,
-            url: e.querySelector('.jobposting-title a').href,
-        })));
-    
+    const simps = ['https://www.simplyhired.com/search?q=remote&sb=dd&job', 
+                  'https://www.simplyhired.com/search?q=remote&sb=dd&pn=2&job',
+                  'https://www.simplyhired.com/search?q=remote&sb=dd&pn=3&job',
+                  'https://www.simplyhired.com/search?q=remote&sb=dd&pn=4&job',
+                  'https://www.simplyhired.com/search?q=remote&sb=dd&pn=5&job'];
 
-       // console.log(jobs);
-// Save data to a JSON file
-fs.writeFile('jobs.json', JSON.stringify(jobs), (err) => {
-    if (err) throw err;
-    console.log('File saved');
-});
-    
+    let jobs = [];
+
+    for (let i = 0; i < simps.length; i++) {
+        const url = simps[i];
+
+        await page.goto(url, { waitUntil: 'networkidle2' });
+
+        const pageJobs = await page.evaluate(() =>
+            Array.from(document.querySelectorAll('#job-list .SerpJob-jobCard.card'), (e) => ({
+                title: e.querySelector('h3').innerText,
+                location: e.querySelector('.jobposting-location span').innerText,
+                Description: e.querySelector('p').innerText,
+                url: e.querySelector('.jobposting-title a').href,
+            })));
+
+        fs.writeFileSync(`page${i}.json`, JSON.stringify(pageJobs));
+        jobs = pageJobs;
+    }
 
     await browser.close();
 }
