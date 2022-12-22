@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/jobber.css">
+    <title>JOB SEARCH HUB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,200&display=swap" rel="stylesheet">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/click.png" alt="">
+            <h5>Job search hub</h5>
+        </div>
+        <ul>
+            <li>
+                <a href="">Home</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">Categories</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="login.html">Sign in</a>
+            </li>
+        </ul>
+    </nav>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h3>Helping you land your dream job</h3>
+            <div class="item">
+            <input type="" name="" class="btn1" id="" placeholder="Keyword">
+            <input type="text" class="btn2" placeholder="Where">
+            <input type="text" class="btn3" placeholder="Category">
+            <button type="submit" class="btn4 btn" onclick="openPopup()">SEARCH</button>
+            <div class="popup" id="popup">
+                <img src="images/404-tick.png" alt="">
+                <h2>Thank you!</h2>
+                <p>Your details has been successfully submiitted Thanks!</p>
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+        </div>
+        <script>
+            let popup = document.getElementById("popup");
+            function openPopup(){
+                popup.classList.add("open-popup");
+            }
+            function closePopup(){
+                popup.classList.remove("open-popup");
+            }
+        </script>
+            </div>
+            <div class="hashtag">
+            <ul class="search">
+                <li>#Popular search</li>
+                <li>#User experience designer</li>
+                <li>#Marketing</li>
+                <li>#frontend</li>
+                <li>#backend</li>
+                </ul>
+                </div>
+                </div>
+    </header>
+    <footer>
+        <nav class="nav">
+            <h3>The best job finder</h3>
+            <div class="navi">
+                <ul>
+                    <li>
+                        <a href="login.html">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
+    
+</body>
+</html>
