@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <!-- Add a responsive viewport meta tag -->
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="jobber.css">
+         <title>JOB SEARCH HUB</title>
+         <!-- Preconnect to Google Fonts for faster loading -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <!-- Include the Google Fonts stylesheet -->
+         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,200&display=swap" rel="stylesheet">
+     </head>
+     <body>
+         <!-- Add a navbar with a logo, home link, categories link, and sign in link -->
+         <nav class="navbar">
+             <div class="logo">
+                  <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.shutterstock.com%2Fimage-vector%2Fhand-click-vector-260nw-1044042922.jpg&imgrefurl=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fclick&tbnid=ZKWfAnr6wZFBzM&vet=12ahUKEwiBnJ-mnbH8AhXcVaQEHcwwAG4QMygOegUIARCQAg..i&docid=9lSbDJCK9uUKNM&w=260&h=280&q=click%20pics&ved=2ahUKEwiBnJ-mnbH8AhXcVaQEHcwwAG4QMygOegUIARCQAg" alt=""> 
+                 <h5>Job search hub</h5>
+             </div>
+             <ul>
+                 <li>
+                     <a href="./boon.html">Home</a>
+                 </li>
+             </ul>
+             <a href=""></a>
+         </nav>
+         
+         <!-- Add a header with a search form and popular search hashtags -->
+         <header>
+             <div class="container">
+                 <h3>Helping you land your dream job</h3>
+                 <div class="item">
+                     <!-- <form id="search-form"> -->
+                         <label>
+                           Job Search:
+                           <input class="btn2" id="search" type="text" name="q" />
+                         </label>
+                         <label>
+                           Page number:
+                           <input class="btn3" id="page" type="pnnumber" name="pn" />
+                         </label>
+                         <button class="btn4" id="getUser" type="submit">Search</button>
+                        <div id="output"></div>
+                     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>   
+                     <script>
+                         document.getElementById('getUser').addEventListener('click', getUser);
+                        //document.getElementById('getUser').emitter.setMaxListeners('click', getUser);
+
+                        let q = document.getElementById('search').value 
+                        let pn = document.getElementById('page').value
+                        function getUser(){
+                           //console.log(document.getElementById('search').value )
+                            //console.log(document.getElementById('page').value)
+
+                            fetch('http://localhost:5500/search?' + new URLSearchParams({
+                                     q: document.getElementById('search').value,
+                                     pn: document.getElementById('page').value,
+                            })) 
+
+                            .then((res) => res.json())
+                            .then((data) => {
+                
+                                let output = '<h2>Available jobs</h2>';
+                                console.log(data)
+                                data.forEach(function(user){
+                                    output += `
+                                    <ul class="sim">
+                                        <a href="${user.url}">Title: ${user.title}</a>
+                                        <li>Level: ${user.level}</li>
+                                        <li>Location: ${user.location}</li>
+                                        <li>Description: ${user.Description}</li>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span><hr>
+                                        
+                                    </ul>
+                                    `;
+                                });
+                            document.getElementById('output').innerHTML = output;
+                            })
+                        }
+                    </script>   
+         </body>
+         </html>
+
+

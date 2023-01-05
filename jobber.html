@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/jobber.css">
+    <link rel="stylesheet" href="jobber.css">
     <title>JOB SEARCH HUB</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,22 +39,15 @@
             <input type="" name="" class="btn1" id="" placeholder="Keyword">
             <input type="text" class="btn2" placeholder="Where">
             <input type="text" class="btn3" placeholder="Category">
-            <button type="submit" class="btn4 btn" onclick="openPopup()">SEARCH</button>
-            <div class="popup" id="popup">
+            <button type="submit" class="btn4 btn">SEARCH</button>
+            <!-- <div class="popup" id="popup">
                 <img src="images/404-tick.png" alt="">
                 <h2>Thank you!</h2>
                 <p>Your details has been successfully submiitted Thanks!</p>
                 <button type="button" onclick="closePopup()">OK</button>
-            </div>
+            </div> -->
         </div>
-        <script>
-            let popup = document.getElementById("popup");
-            function openPopup(){
-                popup.classList.add("open-popup");
-            }
-            function closePopup(){
-                popup.classList.remove("open-popup");
-            }
+        <script src="./index.js">
         </script>
             </div>
             <div class="hashtag">
