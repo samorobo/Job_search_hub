@@ -43,7 +43,10 @@
                            <input class="btn3" id="page" type="pnnumber" name="pn" />
                          </label>
                          <button class="btn4" id="getUser" type="submit">Search</button>
-                        <div id="output"></div>
+                        <div id="output">
+                            <div class="ring"></div>
+                            <span>loading...</span>
+                        </div>
                      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>   
                      <script>
                          document.getElementById('getUser').addEventListener('click', getUser);
@@ -85,8 +88,15 @@
                             document.getElementById('output').innerHTML = output;
                             })
                         }
-                    </script>   
+                    </script> 
+                    <script>
+                        $(document).ready(function(){
+                            $('.ring, span').hide();
+                        });
+
+                        $('.btn4').on('click', function(){
+                            $('.ring, span').show();
+                        })
+                    </script>  
          </body>
          </html>
-
-

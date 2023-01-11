@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="boon.css">
+    <title>JOB SEARCH HUB HOME PAGE</title>
+</head>
+<body>
+    <div id="main">
+        <div id="box1"></div>
+        <div id="box2">
+            <div id="text">
+                JOB<br>SEARCH HUB
+                <p>Explore our site and lets find whats right for you!!!</p>
+                
+                <!-- <div class="search">
+                    <input type="Keyword" class="btn1" placeholder="keyword" id="search" name="p">
+                    <input type="where" class="btn2" placeholder="Where">
+                    <input type="categories" class="btn3" placeholder="Categories"> 
+                    <input type="pnnumber", class="btn2" placeholder="Page" id="page" name="pn">
+                    <button type="submit" class="btn4" id="getUser">Search</button>
+                </div> -->
+
+                <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+                <script>
+                    document.getElementById('getUser').addEventListener('click', getUser);
+                   //document.getElementById('getUser').emitter.setMaxListeners('click', getUser);
+
+                   let q = document.getElementById('search').value 
+                   let pn = document.getElementById('page').value
+                   function getUser(){
+                      //console.log(document.getElementById('search').value )
+                       //console.log(document.getElementById('page').value)
+
+                       fetch('http://localhost:5500/search?' + new URLSearchParams({
+                                q: document.getElementById('search').value,
+                                pn: document.getElementById('page').value,
+                       })) 
+
+                       .then((res) => res.json())
+                       .then((data) => {
+           
+                           let output = '<h2>Users</h2>';
+                           console.log(data)
+                           data.forEach(function(user){
+                               output += `
+                               <ul>
+                                   <li>Title: ${user.title}</li>
+                                   <li>Level: ${user.level}</li>
+                                   <li>URL: ${user.url}</li>
+                                   <li>Location: ${user.location}</li>
+                                   
+                               </ul>
+                               `;
+                           });
+                       document.getElementById('output').innerHTML = output;
+                       })
+                   }
+               </script> -->
+            </div>
+        </div>
+        <div id="box3">
+            <div id="container">
+                <div id="logo">
+                    <img src="" alt="">
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li><a href="./test.html">EXPLORE</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

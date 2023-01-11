@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
+
+@font-face {
+    font-family: "Booter - Zero Zero";
+    src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
+         url("Fonts/Booter - Zero Zero.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,7 +19,7 @@
 body {
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif;
-    background: bisque
+    background: linear-gradient(to right, gray, lightblue);
 
   }
   
@@ -36,8 +48,9 @@ body {
 
   .logo h5 {
     font-size: 25px;
-    font-weight: bold;
+    font-weight: lighter;
     color: rgb(41, 162, 162);
+    font-family: "Booter - Zero Zero";
   }
   
   .navbar ul {
@@ -47,7 +60,7 @@ body {
     padding: 0;
   }
 
-  navbar ul::after{
+  .navbar ul::after{
     border: 2px solid red;
   }
   
@@ -75,13 +88,15 @@ body {
     lbackground: bisque;
     lbackground: #f1355a;
     lbackground: rgb(198, 111, 4);
-    background: rgb(151, 118, 78);
+    lbackground: rgb(151, 118, 78);
   }
   
   header h3 {
     font-size: 36px;
     margin-bottom: 30px;
+    box-shadow: 5px 5px 15px 20px rgba(25, 111, 71, .5);
     lcolor: rgb(30, 125, 125);
+  
   
 
   }
@@ -89,10 +104,27 @@ body {
   .container {
     lbackground-color: rgb(41, 155, 193);
     margin: 0;
+    background-size: cover;
+    background-blend-mode: multiply;
+    overflow: scroll;
+    opacity: 1.5;
+    background: rgba(0, 0, 0, );
+    lbackground-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzZ2aLc77V-KzEHpBBiYJg4ZPodf41xzQ9xQ&usqp=CAU');
+    background: linear-gradient(to right, gray, lightblue);
   }
 
   .container h3 {
-    color: white;
+    color: black;
+    font-size: 50px;
+    margin: 80px;
+    padding-top: 70px;
+    
+  }
+
+  .item {
+
+    margin-top: 60px;
+    margin-bottom: -40px;
   }
 
   
@@ -115,6 +147,7 @@ body {
     cursor: pointer;
     border-radius: 20px;
     background-color: blanchedalmond;
+    box-shadow: 10px 10px 0.5px grey;
     
   }
   
@@ -124,8 +157,7 @@ body {
     background: aqua;
     border: none;
     flex-wrap: wrap;
-    margin-left: 20px;
-    
+    margin-left: 20px;    
   }
 
   .btn2:hover {
@@ -135,12 +167,12 @@ body {
 
   }
 
-   
   .btn3:hover {
     background: grey;
     opacity: 0.5;
 
   }
+
   
   .hashtag {
     display: flex;
@@ -206,6 +238,8 @@ body {
     justify-content: center;
     align-items: center;
    lbackground: rgb(198, 111, 4);
+   lmargin: 330px;
+   font-family: "Booter - Zero Zero";
   
   }
 
@@ -245,5 +279,74 @@ body {
     lcolor: burlywood;
     text-align: center;
     color: khaki;
-
+    margin-bottom: 20px;
+    font-family: "Booter - Zero Zero";
+  
   }
+
+  footer {
+    margin: 10px;
+    font-size: 20px;
+  }
+
+  footer h4 {
+    padding-bottom: 10px;
+  }
+
+
+
+
+  .ring {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: ring 2s linear infinite;
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px #18b201;
+    }
+
+    50% {
+        transform: rotate(180deg);
+        box-shadow: 1px 5px 2px #e65c00;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px #0456c8;
+    }
+    
+}
+
+
+.ring::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, .3);
+}
+
+span {
+    color: #737373;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 200px;
+    animation: text 3s ease-in-out linear infinite;
+}
+
+@keyframes text {
+
+    50% {
+        color: aqua;
+    }
+    
+}

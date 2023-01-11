@@ -1,0 +1,230 @@
+body {
+    margin: 0px;
+    background-color: #1E242A;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    
+}
+
+#box1 {
+    width: 530px;
+    height: 625px;
+      background-image: url(https://res.cloudinary.com/davims6ce/image/upload/v1597557707/1_pblr2h.png); 
+     /* background-image: url('https://media.istockphoto.com/id/1200939477/photo/headshot-of-handsome-black-guy-using-laptop.jpg?s=612x612&w=0&k=20&c=h4DgqTFxDhPdTCXY_FMpCWJGm0tJU6f8tuyX4gszTEg=');  */
+    position: absolute;
+    bottom: -100%;
+    left: 30%;
+    animation: anim 2s forwards, anim2 3s forwards 3s;
+}
+
+#box1:after {
+    content: '';
+    position: absolute;
+    width: 530px;
+    height: 625px;
+     /* background: url('https://media.istockphoto.com/id/1352063475/photo/concentrated-young-business-woman-working-with-computer-in-the-office.jpg?b=1&s=170667a&w=0&k=20&c=6aj8QDY6rb2XC6JsDSxhK3l3uJZGi9GOHMOTuuUqiEk=');   */
+      background-image: url(https://res.cloudinary.com/davims6ce/image/upload/v1597557706/2_meanqt.png); 
+    left: 0px;
+    z-index: -1;
+
+}
+
+@keyframes anim {
+    from {
+        bottom: -100%;
+    }
+
+    to {
+        bottom: 0%;
+    }
+}
+
+@keyframes anim2 {
+    from {
+        left: 30%;
+        width: 530px;
+    }
+
+    to {
+        width: 0px;
+        left: 50%;
+    }
+    
+}
+
+#box2 {
+    width: auto;
+    height: auto;
+    font-family: 'Bahnschrift Condensed';
+    color: white;
+    font-size: 10em;
+    font-weight: 500;
+    line-height: 130px;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    overflow: hidden;
+}
+
+#text {
+    position: relative;
+    ileft: -100%;
+    animation: anim3 2s forwards 3s;
+    height: 800px;
+    width: 900px;
+    
+}
+
+#text p {
+    font-size: 25px;
+    padding-top: -100px;
+    color: aqua;
+    position: relative; 
+    display: flex;
+    flex-wrap: wrap;
+    bottom: 60px;  
+    font-family:'Courier' monospace;
+
+}
+
+@keyframes anim3 {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+#box3 {
+    overflow: hidden;
+}
+
+#container {
+    width: 100%;
+    position: absolute;
+    top: -100%;
+    animation: anim4 2s forwards 2.5s;
+}
+
+#logo {
+    float: left;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+#logo img {
+    width: 50px;
+}
+
+#menu {
+    font-family: 'Benschrift Condensed';
+    font-size: 14px;
+    color: white;
+    letter-spacing: 2px;
+    margin-right: 150px;
+    margin-top: 20px;
+    float: right;
+}
+
+#menu ul {
+    list-style: none;
+
+}
+
+#menu li {
+    display: inline-block;
+    margin-left: 100px;
+}
+
+#menu li:hover {
+    border: 1px solid aquamarine;
+    transition: hidden;
+    overflow: hidden;
+    background: aqua;
+    border-radius: 8px;
+
+}
+
+
+
+@keyframes anim4 {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 0%;
+
+    }
+}
+
+
+#main #text {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+} 
+
+#main .search {
+    background-color: r;
+    display: flex;
+    bottom: 100px;
+    float: right;
+
+}
+
+#main .search input {
+    height: 40px;
+    margin: 2px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none;
+    border-radius: 10px;
+    /* background: linear-gradient (to bottom right,  yellow, white); */
+    /* background: rgb(246, 166, 246); */
+    background: rgb(235, 148, 235);
+    border: 2px solid purple;
+    text-indent: 10px;
+    box-shadow: 10px 10px 5px rgb(25, 141, 111, 0.6);
+    opacity: 0.8;
+}
+
+.btn4 {
+    background: aqua;
+    height: 45px;
+    width: 130px;
+    margin: 2px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none;
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+#main .search input:hover {
+    opacity: 0.5;
+}
+
+.btn4:hover {
+    background: aquamarine;
+    opacity: 0.5;
+}
+
+#box3 ul li a {
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+}
