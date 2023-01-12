@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Twhite2/Job_search_hub#readme",
   "dependencies": {
+    "chromium": "^3.0.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "file-system": "^2.2.2",
