@@ -4,6 +4,13 @@ const puppeteer = require('puppeteer');
 
 const app = express();
 
+require("dotenv").config();
+
+let port = process.env.PORT;
+
+
+
+
  app.use((_req, res, next) => {
  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', '*');
@@ -22,8 +29,8 @@ app.get('/search', async (req, res) => {
   res.json(results);
 });
 
-app.listen(5500, () => {
-  console.log('Server listening on port 5500');
+app.listen(port, () => {
+  console.log(`Server listening on port 5500 ${port}`);
 });
 
 async function run(searchQuery, pageNumber) {
