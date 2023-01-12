@@ -35,7 +35,7 @@ app.listen(port, () => {
 });
 
 async function run(searchQuery, pageNumber) {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ executablePath: '/opt/render/project/src/node_modules/puppeteer-core/lib/cjs/puppeteer/node/ProductLauncher.js:120:27' });
   const page = await browser.newPage();
 
   // Use the search query and page number to generate the URL
