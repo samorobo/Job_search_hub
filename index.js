@@ -30,7 +30,7 @@ app.get('/search', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server listening on port 5500 ${port}`);
+  console.log(`Server listening on port  ${port}`);
 });
 
 async function run(searchQuery, pageNumber) {
