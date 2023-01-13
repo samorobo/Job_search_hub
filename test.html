@@ -58,7 +58,7 @@
                            //console.log(document.getElementById('search').value )
                             //console.log(document.getElementById('page').value)
 
-                            fetch('https://job-search-hub.onrender.com/search?' + new URLSearchParams({
+                            fetch('http://localhost:5500/search?' + new URLSearchParams({
                                      q: document.getElementById('search').value,
                                      pn: document.getElementById('page').value,
                             })) 
