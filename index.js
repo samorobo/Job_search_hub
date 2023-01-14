@@ -1,15 +1,12 @@
+"use strict"
+const chromium = require('chromium');
 const express = require('express');
 const puppeteer = require('puppeteer');
-const chromium = require('chromium');
 
 const app = express();
 
 require("dotenv").config();
-
 let port = process.env.PORT;
-
-
-
 
  app.use((_req, res, next) => {
  res.header('Access-Control-Allow-Origin', '*');
@@ -30,14 +27,14 @@ app.get('/search', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server listening on port  ${port}`);
+  console.log('Server listening on port 5500');
 });
 
 async function run(searchQuery, pageNumber) {
-  const browser = await puppeteer.launch({ executablePath: '/opt/render/project/src/node_modules/puppeteer-core/lib/cjs/puppeteer/node/ProductLauncher.js:120:27' });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
-  // Use the search query and page number to generate the URL
+  // Use the bsearch query and page number to generate the URL
 const url = `https://www.simplyhired.com/search?q=${searchQuery}&sb=dd&pn=${pageNumber}&job`;
 
 //const url = `https://www.simplyhired.com/search?q=accountant&sb=dd&pn=1&job`;
