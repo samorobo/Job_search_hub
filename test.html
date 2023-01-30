@@ -85,9 +85,10 @@
                                     </ul>
                                     `;
                                 });
-                            document.getElementById('output').innerHTML = output;
+                            // document.getElementById('output').innerHTML = output;
                             })
                         }
+                        Promise.all([output]).then(document.getElementById('output').innerHTML = output)
                     </script> 
                     <script>
                         $(document).ready(function(){
